@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: d8b50a4cca2850c85d170b18744964f3a283304b
+  branch: main
+  specs:
+    faker (3.0.0)
+      i18n (>= 1.8.11, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -24,7 +32,7 @@ GEM
     diff-lcs (1.4.4)
     eventmachine (1.2.7)
     ffi (1.15.3)
-    i18n (1.8.10)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -87,10 +95,12 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   activerecord (~> 6.1)
   database_cleaner (~> 2.0)
+  faker!
   pry (~> 0.14.1)
   rack-contrib (~> 2.3)
   rack-cors (~> 1.1)
@@ -106,4 +116,4 @@ DEPENDENCIES
   thin (~> 1.8)
 
 BUNDLED WITH
-   2.2.23
+   2.3.24

@@ -41,7 +41,12 @@ group :development do
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"
+
+  #Faker Gem to make fake data in db.seed
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 end
+
+
 
 # These gems will only be used when we are running tests
 group :test do
