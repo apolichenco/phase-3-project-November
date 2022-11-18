@@ -26,4 +26,14 @@ class ApplicationController < Sinatra::Base
     product.to_json
   end
 
+  get '/prices' do
+    prices = Price.all
+    prices.to_json
+  end
+
+  get '/prices/:id' do
+    price = Price.find(params[:id])
+    price.to_json
+  end
+
 end
