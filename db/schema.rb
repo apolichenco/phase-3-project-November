@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2022_11_17_040122) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.float "sell_for"
     t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

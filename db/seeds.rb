@@ -22,9 +22,5 @@ end
     )
 end
 
-all_products = Product.all
-all_products.each do |p|
-    p.update(sell_for: "#{n.sell_for}")
-end 
 
 puts "✅ Done seeding!"

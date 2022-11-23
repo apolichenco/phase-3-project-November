@@ -3,11 +3,11 @@ require 'pry'
 class Product < ActiveRecord::Base
     belongs_to :category
     has_many :prices
-    attr_reader :sell_for
 
-  def sell_for
-    gain = self.prices.last.price * 0.3
-    @sell_for = self.prices.last.price + gain
+  def sell_for_value
+    last_priced = self.prices.last.price
+    gain = last_priced * 0.3
+    last_priced + gain
   end
 
   def discount discount
@@ -21,7 +21,16 @@ class Product < ActiveRecord::Base
 
   def order_date
     numbered_date = Product.first.prices.last.created_at
-    t= DateTime.parse(numbered_date.to_s)
+    date = DateTime.parse(numbered_date.to_s)
+    date.strftime("%a, %d %b %Y")
+  end
+
+  def self.count
+    Product.all.count
+  end
+
+  def display_price
+    "The price is #{self.prices.last.price}"
   end
   
 end
