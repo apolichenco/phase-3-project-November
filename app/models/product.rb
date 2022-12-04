@@ -7,7 +7,12 @@ class Product < ActiveRecord::Base
   def sell_for_value
     last_priced = self.prices.last.price
     gain = last_priced * 0.3
-    last_priced + gain
+    number = last_priced + gain
+    number.round(2)
+  end
+
+  def last_priced
+    self.prices.last.price
   end
 
   def discount discount
@@ -16,7 +21,8 @@ class Product < ActiveRecord::Base
   end
 
   def profit_margins
-    self.prices.last.price * 0.3
+    number = self.prices.last.price * 0.3
+    Math.round(number * 100.0) / 100.0
   end
 
   def order_date
