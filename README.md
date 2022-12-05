@@ -12,9 +12,12 @@ This page is for businesses to manage their inventory and check it's prices.
    * Are able to add a price for your products
 
 ### Requirements
-* Connect to https://github.com/apolichenco/phase-3-inventory-project
+* For the frontend, connect to https://github.com/apolichenco/phase-3-inventory-project
 
 ### Installation Instructions
-* Start a server on this directory
-* Seed data is provided if you want
-* Use the above link for the frontend
+* Fork and clone this repo to your computer
+* Run bundle install to access all the gemfiles
+* Run bundle exec rake db:migrate to create the table, and bundle exec rake db:seed if you want some generic data
+* Run bundle exec rake server to create a server (most likely localhost/9292)
+* Fork and clone the link above for the frontend
+* Follow the instructions in the README to create the frontend

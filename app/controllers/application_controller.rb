@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
 
   get '/products/:id/prices' do
     product = Product.find(params[:id])
-    product.prices.to_json()
+    product.prices.to_json
   end
 
   patch '/products/:id' do
