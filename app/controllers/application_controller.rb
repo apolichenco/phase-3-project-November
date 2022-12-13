@@ -8,8 +8,10 @@ class ApplicationController < Sinatra::Base
     categories.to_json(:include => {
       :products => {
         :methods => [:sell_for_value, :last_priced]
-        }} )
+        }} 
+        )
   end
+  
 
   get '/products/:id/prices' do
     product = Product.find(params[:id])
@@ -37,7 +39,7 @@ class ApplicationController < Sinatra::Base
     )
     new_product_id = product.id
     Price.create(
-      price: 0,
+      price: 1.0,
       product_id: new_product_id
       )
     product.to_json(include: :prices)
